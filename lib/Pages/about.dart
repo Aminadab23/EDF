@@ -16,21 +16,7 @@ class AboutPage extends StatefulWidget {
 }
 
 class _AboutPageState extends State<AboutPage> {
-  List<String> about = [];
-  Future<void> getAbout() async {
-    final url = Uri.parse("${URL.address}/getAbout/");
-    final resp = await http.get(url);
-    if (resp.statusCode == 200) {
-      List<dynamic> jsonAnnouncements = json.decode(resp.body);
-      about = jsonAnnouncements.map((dynamic item) => item.toString()).toList();
-    }
-  }
-
-  @override
-  void initState() {
-    getAbout();
-    super.initState();
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -90,14 +76,14 @@ class _AboutPageState extends State<AboutPage> {
                           TextStyle(fontSize: 42, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "lorem ipsom dolor",
+                      "Ethiopian Digital Farmers",
                       style: TextStyle(
                           fontStyle: FontStyle.italic, color: Colors.black26),
                     )
                   ]),
                 )),
             TheTabs(
-              abouts: about,
+              
             )
           ],
         ),

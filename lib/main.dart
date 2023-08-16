@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:woft_1st_project/Pages/SignUpPage.dart';
 import 'package:get/get.dart';
 
+
+
 void main() {
   runApp(const MyApp());
 }

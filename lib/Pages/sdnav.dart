@@ -130,7 +130,8 @@ class _DraState extends State<Dra> {
                // the erase the login data
 const storage = FlutterSecureStorage();
 storage.delete(key: "refreshToken");
-Get.to(const SignupPage());
+
+ Get.offAll(const SignupPage());
 
 
              

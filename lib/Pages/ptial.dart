@@ -21,10 +21,7 @@ class _ProdState extends State<Prod> {
     var resp = await http.get(url);
 
     if (resp.statusCode == 200) {
-      // Get.dialog(AlertDialog(
-      //     title: const Text(""),
-      //     content: Text(resp.body),
-      //   ));
+     
       List<dynamic> jsonAnnouncements = json.decode(resp.body);
       products = jsonAnnouncements
           .map((jsonAnnouncement) => Product.fromJson(jsonAnnouncement))

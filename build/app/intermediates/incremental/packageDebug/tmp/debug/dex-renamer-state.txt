@@ -1,4 +1,4 @@
-#Tue Aug 15 08:22:49 EET 2023
+#Wed Aug 16 09:32:15 EET 2023
 base.0=C\:\\Users\\belac\\Desktop\\WOFT\\New folder\\Woft-first-project\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

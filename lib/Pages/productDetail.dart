@@ -109,11 +109,13 @@ class _ProductDetailState extends State<ProductDetail> {
                         );
 
                         if (userResponse.statusCode == 200) {
-                          var userId = jsonDecode(userResponse.body)['email'];
+                          var userId = jsonDecode(userResponse.body)['id'];
+
+
 
                           var body = {
-                            'user': userId, // Use the user's ID
-                            'product': int.parse(widget.prod.product_id),
+                            'user': "${userId}",
+                            'product':widget.prod.product_id,
                           };
 
                           var headers = {
@@ -128,8 +130,9 @@ class _ProductDetailState extends State<ProductDetail> {
 
                           if (response.statusCode == 201) {
                             Get.snackbar("", 'Cart created successfully',
-                                backgroundColor: Colors.greenAccent,
-                                colorText: Colors.white);
+                                backgroundColor: Colors.blueAccent,
+                                colorText: Colors.white,
+                                icon: Icon(Icons.shopping_cart_checkout));
                           } else {
                             Get.snackbar("error",
                                 'Failed to create cart. Error: ${response.body}',
