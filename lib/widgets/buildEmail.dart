@@ -2,7 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+ool validateEmail(String email) {
+  // Regular expression for email validation
+  final RegExp emailRegex = RegExp(r'^[\w-]+(\.[\w-]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,})$');
+  
+  return emailRegex.hasMatch(email);
+}
 Widget buildEmail(TextEditingController controller) => SizedBox(
       height: 64,
       child: TextFormField(
@@ -30,7 +35,12 @@ Widget buildEmail(TextEditingController controller) => SizedBox(
           if (value.length < 6) {
             return 'Email must be at least 6 characters long';
           }
-          return null;
+             if (validateEmail(value)== true){
+            return null;
+          }
+          else{
+            return "email is invalied";
+          }
         },
       ),
     );
